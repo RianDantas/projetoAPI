@@ -23,13 +23,18 @@ function Home(){
     }, [])
 
     return(
-        <div>
-           <h1 className={estilo.titulo}>home</h1>
+        <div className={estilo.corpo}>
+           <div className={estilo.bar}>
+                <h1 className={estilo.titulo}>Início</h1>
+           </div>
            {filmes.map((filme) => (
-            <div key={filme.id}>
+            <div   className={estilo.filmes}  key={filme.id}>
                 <a href={`/detalhes/${filme.id}`}>
                     <h2>{filme.title}</h2>
+                    <img className={estilo.foto} src={`https://image.tmdb.org/t/p/w500/${filme.poster_path}`} alt="" />
                     </a>
+                    
+                    
                 
                 
             </div>

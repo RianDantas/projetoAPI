@@ -16,7 +16,10 @@ function Detalhes(){
                     page: 1
                 }
             })
-            console.log(response.data.title);
+            // console.log(response.data);
+            response.data.genres?.map((item)=>{
+                console.log(item.name)
+            })
             setFilme(response.data);
         }
     loadFilme();
@@ -26,10 +29,24 @@ function Detalhes(){
         <div>
            <h1>{filme.title}</h1>
 
-           <img src={`https://image.tmdb.org/t/p/w500/${filme.poster_path}`} alt="" />
+           <img src={`https://image.tmdb.org/t/p/w500/${filme.backdrop_path}`} alt="" />
                 {/* <p>{filme.backdrop_path}</p> */}
                 <h3>{filme.release_date}</h3>
                 <h3>{filme.overview}</h3>
+
+
+             {filme.genres?.map((item)=>{
+                    return (
+                        <>
+                        <p>{item.name}</p>
+                        </>
+                    )
+                })} 
+
+                {/* {filme.genre_ids.map((ids) =>(
+                    <h1>{ids.name}</h1>
+                ))
+                } */}
         </div>
     );
 }
