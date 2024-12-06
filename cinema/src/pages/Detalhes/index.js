@@ -43,10 +43,7 @@ function Detalhes(){
                     )
                 })} 
 
-                {/* {filme.genre_ids.map((ids) =>(
-                    <h1>{ids.name}</h1>
-                ))
-                } */}
+                
         </div>
     );
 }
