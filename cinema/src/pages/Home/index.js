@@ -1,12 +1,15 @@
-
-
 import estilo from './home.module.css'
 import api from "../../servicos/api"
 import { useEffect, useState } from 'react';
 function Home() {
 
     const [filmes, setFilmes] = useState([]);
+
+
+
     const [pesquisa, setpesquisa] = useState();
+
+     
 
     function handleInputChange(e) {
         e.preventDefault();
